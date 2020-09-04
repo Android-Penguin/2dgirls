@@ -18,44 +18,27 @@
   </div>
 
   <div id=content-box class=flex-container>
-    <div class=test-div>
-      <img src=content_images/nino.png class=box-image alt="Nino" title="Nino">
-    </div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
-    <div class=test-div></div>
+    <!-- Images added here by script -->
   </div>
-</body>
 
-</html>
+
+  <script src="image_list.js"></script>
+  <script>
+  /* Goes through each item in the array and creates a div
+  with the image and metadate. Each newly created item
+  is then added to the flexbox div for We Dem Kois. */
+    for(item of image_list) {
+      var div = document.createElement("div");
+      div.setAttribute('class', 'test-div')
+      var img = document.createElement("img");
+      img.setAttribute('class', 'box-image')
+      img.src = item.filepath;
+      img.alt = item.name;
+      img.title = item.name;
+      img.setAttribute('onclick', item.onclick);
+      div.appendChild(img);
+      var container = document.getElementById("content-box");
+      container.appendChild(div);
+    }
+  </script>
+</body>
