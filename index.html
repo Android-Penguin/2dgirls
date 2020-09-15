@@ -23,11 +23,25 @@
 
 
   <script src="image_list.js"></script>
+  <script src="https://www.dropbox.com/s/vkc7udr3f3vo1h8/image_list.js?dl=0"></script>
   <script>
   /* Goes through each item in the array and creates a div
-  with the image and metadate. Each newly created item
-  is then added to the flexbox div for We Dem Kois. */
+  with the image and metadata. Each newly created item
+  is then added to the gallery. */
     for(item of image_list) {
+      var div = document.createElement("div");
+      div.setAttribute('class', 'test-div')
+      var img = document.createElement("img");
+      img.setAttribute('class', 'box-image')
+      img.src = item.filepath;
+      img.alt = item.name;
+      img.title = item.name;
+      img.setAttribute('onclick', item.onclick);
+      div.appendChild(img);
+      var container = document.getElementById("content-box");
+      container.appendChild(div);
+    }
+    for(item of image_list_online) {
       var div = document.createElement("div");
       div.setAttribute('class', 'test-div')
       var img = document.createElement("img");
